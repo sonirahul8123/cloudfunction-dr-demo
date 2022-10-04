@@ -37,6 +37,7 @@ def hello_pubsub(event, context):
          webCount=0
          for i in temp:
               t=(i.split("-"))   
+              # update below line according to your snapshot names
               if t[0]=="primary" and t[1]=="web":                                
                 if webCount==0:
                     f.append(i)
