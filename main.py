@@ -69,6 +69,12 @@ def hello_pubsub(event, context):
     ],
     "networkInterfaces": [
          {
+          "accessConfigs": [
+            {
+            "name": "External NAT",
+            "networkTier": "PREMIUM"
+            }
+        ],
          "networkIP": "10.190.0.10",
          "stackType": "IPV4_ONLY",
          "subnetwork": f"projects/{project}/regions/asia-south2/subnetworks/default"
