@@ -25,18 +25,17 @@ def hello_pubsub(event, context):
          temp= []
 
          for snapshot in response['items']:
-              # TODO: Change code below to process each `snapshot` resource:
-              #pprint(snapshot)
+              #Change code below to process each `snapshot` resource:
               json_str = json.dumps(snapshot)
               resp = json.loads(json_str)    
               temp.append(resp['name'])
-          # pprint(temp[0]) 
          snapname= temp 
           # pprint (snapname)
          f=[]
          webCount=0
          for i in temp:
-              t=(i.split("-"))   
+              t=(i.split("-"))  
+              # here snapshot name is "primary-web-snap-xaby". Change below line as per your snapshot naming convention.
               if t[0]=="primary" and t[1]=="web":                                
                 if webCount==0:
                     f.append(i)
